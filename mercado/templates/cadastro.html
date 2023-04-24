@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+Cadastro
+{% endblock %}
+
+
+{% block body %}
+
+<body class="text-center">
+<div class="container border mt-2 ">
+<!--               <img class=b-4" src="https://cdn-icons-png.flaticon.com/512/5087/5087579.png" >-->
+    <h1 class="h3 mb-3 font-weight-normal">
+        Por favor Crie a sua conta
+    </h1>
+    <hr>
+
+    <form method="POST" class="form-register" class="border">
+        {{form.hidden_tag()}}
+        <div class="col-sm-6 offset-sm-3 mt-2">
+            {{ form.usuario.label() }}
+            {{ form.usuario(class="form-control", placeholder="UserName")}}
+        </div>
+        <div class="col-sm-6 offset-sm-3 mt-2">
+            {{ form.email.label()}}
+            {{ form.email(class="form-control", placeholder="Informe o E-mail")}}
+        </div>
+
+        <div class="col-sm-6 offset-sm-3 mt-2">
+            {{ form.senha.label()}}
+            {{ form.senha(class="form-control", placeholder="Informe a senha")}}
+        </div>
+        <div class="col-sm-6 offset-sm-3 mt-2">
+            {{ form.confSenha.label()}}
+            {{ form.confSenha(class="form-control", placeholder="Confirme a senha")}}
+        </div>
+        <div class="col-sm-6 offset-sm-3 mt-2">
+            {{ form.botao_submit_cadastro(class="btn btn-primary d-grid gap-2 col-6 mx-auto")}}
+        </div>
+    </form>
+</div>
+
+</body>
+{% endblock %}
